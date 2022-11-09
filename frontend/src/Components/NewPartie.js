@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 
 function NewPartie() {
     const { register, handleSubmit } = useForm();
-    // if()
+
     const onSubmit = data => console.log(data);
 
     return (
