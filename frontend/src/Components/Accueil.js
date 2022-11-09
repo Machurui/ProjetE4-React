@@ -6,7 +6,7 @@ import logo from '../logo.svg'
 
 function Accueil() {
     return (
-        <div className="App">
+        <div className="Accueil">
             <header className="Accueil-header">
                 <img src={logo} className="Acceuil-logo" alt="logo" />
                 <h2>Scrumy</h2>
@@ -18,8 +18,6 @@ function Accueil() {
                         <Button variant="contained">Rejoindre une partie</Button>
                     </Box>
                 </Box>
-
-
             </header>
         </div>
     );
