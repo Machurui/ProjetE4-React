@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 function NewPartie() {
     const { register, handleSubmit } = useForm();
@@ -26,7 +27,20 @@ function NewPartie() {
             });
             
         } else{
-
+            axios.post('/newPartie', {
+                name: data.name,
+                pseudo: data.pseudo,
+                cp: data.CP,
+                team: data.TEAM,
+                po: data.PO,
+                sm: data.SM,
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
         }
     }
 
