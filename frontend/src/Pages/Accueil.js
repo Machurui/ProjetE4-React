@@ -15,7 +15,7 @@ function Accueil() {
                         <Button variant="contained" href="/newpartie">Créer une partie</Button>
                     </Box>
                     <Box sx={{ my: 3, mx: 2 }}>
-                        <Button variant="contained">Rejoindre une partie</Button>
+                        <Button variant="contained" href="/joinpartie">Rejoindre une partie</Button>
                     </Box>
                 </Box>
             </header>

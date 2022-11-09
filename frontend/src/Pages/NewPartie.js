@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function NewPartie() {
     const { register, handleSubmit } = useForm();
@@ -25,27 +26,27 @@ function NewPartie() {
                 progress: undefined,
                 theme: "dark",
             });
-            
-        } else{
-            axios.post('/newPartie', {
+
+        } else {
+            axios.post('http://localhost:2000/newpartie', {
                 name: data.name,
                 pseudo: data.pseudo,
                 cp: data.CP,
                 team: data.TEAM,
                 po: data.PO,
                 sm: data.SM,
-              })
-              .then(function (response) {
-                console.log(response);
-              })
-              .catch(function (error) {
+            })
+            .then(function (response) {
+                <Link to="/dashboardPartie"/>
+            })
+            .catch(function (error) {
                 console.log(error);
-              });
+            });
         }
     }
 
     return (
-        <div className="App">
+        <div className="">
             <ToastContainer
                 position="top-center"
                 autoClose={5000}
@@ -63,16 +64,15 @@ function NewPartie() {
                     required
                     id="outlined-required"
                     label="Nom de la partie"
-                    {...register("name", { required: true})}
+                    {...register("name", { required: true })}
                 />
                 <TextField
                     required
                     id="outlined-required"
                     label="Votre pseudo"
-                    {...register("pseudo", { required: true})}
+                    {...register("pseudo", { required: true })}
                 />
                 <FormGroup>
-                    <FormControlLabel control={<Checkbox {...register("CP")} />} label="CP" />
                     <FormControlLabel control={<Checkbox {...register("TEAM")} />} label="TEAM" />
                     <FormControlLabel control={<Checkbox {...register("PO")} />} label="PO" />
                     <FormControlLabel control={<Checkbox {...register("SM")} />} label="SM" />
