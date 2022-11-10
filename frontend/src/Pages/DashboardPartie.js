@@ -15,7 +15,7 @@ export default function DashboardPartie() {
                     <Button variant="contained" href="/story">Gérer les stories</Button>
                 </Box>
                 <Box sx={{ my: 3, mx: 2 }}>
-                    <Button variant="contained" href="/">Participer au daily</Button>
+                    <Button variant="contained" href="/dashboardpartie/:1/participer">Participer au daily</Button>
                 </Box>
                 <Box sx={{ my: 3, mx: 2 }}>
                     <Button variant="contained" href="/">Gérer les participants</Button>

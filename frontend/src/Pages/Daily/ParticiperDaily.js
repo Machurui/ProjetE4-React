@@ -19,8 +19,8 @@ function ParticiperDaily() {
       };
     const onSubmit = data => {
 
-        if (data.TEAM === false && data.PO === false && data.SM === false) {
-            toast.error('Vous devez sélectionner au minimum un rôle.', {
+        if (data.story === false) {
+            toast.error('Vous devez sélectionner au minimum une story.', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -32,12 +32,8 @@ function ParticiperDaily() {
             });
 
         } else {
-            axios.post('http://localhost:2000/joinpartie', {
-                name: data.name,
-                pseudo: data.pseudo,
-                team: data.TEAM,
-                po: data.PO,
-                sm: data.SM,
+            axios.post('http://localhost:2000/dashboardpartie/:id/participer', {
+                story: data.story,
             })
                 .then(function (response) {
                     console.log(response);
@@ -82,8 +78,8 @@ return (
         </Select>
       </FormControl>
     </Box>
-                <Box class="mb-0.5"><Button variant="contained" type="submit">Simuler sa productivité</Button></Box>
-                <Box class="mt-2.5"><Button variant="contained" type="submit">Retour</Button></Box>
+                <Box class="mb-0.5"><Button variant="contained"  href="/dashboardpartie/:1/participer" type="submit">Simuler sa productivité</Button></Box>
+                <Box class="mt-2.5"><Button variant="contained" href="/dashboardpartie/:1" type="submit">Retour</Button></Box>
     </div>
 );
 }
