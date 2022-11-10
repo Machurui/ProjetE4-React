@@ -59,6 +59,7 @@ function JoinPartie() {
                 theme="dark"
             />
             <form onSubmit={handleSubmit(onSubmit)}>
+            <h1 class="mb-20 text-2xl font-medium text-center">Rejoindre une Partie</h1>
             <Box class="mb-0.5"><TextField
                     required
                     id="outlined-required"

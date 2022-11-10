@@ -9,6 +9,9 @@ import JoinPartie from './Pages/JoinPartie';
 import DashboardPartie from './Pages/DashboardPartie';
 import Story from './Pages/Story/Story';
 import Sprint from './Pages/Sprint/Sprint';
+import Daily from './Pages/Daily/Daily';
+import StartDaily from './Pages/Daily/StartDaily';
+import ParticiperDaily from './Pages/Daily/ParticiperDaily';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,8 +25,9 @@ root.render(
         <Route path='/dashboardpartie/:id' element={<DashboardPartie />} />
         <Route path='/dashboardpartie/:id/story' element={<Story />} />
         <Route path='/dashboardpartie/:id/sprint' element={<Sprint />} />
-        <Route path='/dashboardpartie/:id/start' element={<Sprint />} />
-        <Route path='/dashboardpartie/:id/daily' element={<Sprint />} />
+        <Route path='/dashboardpartie/:id/start' element={<StartDaily />} />
+        <Route path='/dashboardpartie/:id/daily' element={<Daily />} />
+        <Route path='/dashboardpartie/:id/participer' element={<ParticiperDaily />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

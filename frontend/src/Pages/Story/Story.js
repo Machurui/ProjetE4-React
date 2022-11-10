@@ -35,7 +35,7 @@ export default function Sprint() {
         <div className="">
             <Box>
                 <Header />
-                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                <List class="" sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     {stories.map((story) => (
                         <ListItem key={story.id} alignItems="flex-start">
                             <ListItemAvatar>

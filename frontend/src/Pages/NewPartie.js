@@ -63,6 +63,7 @@ function NewPartie() {
             />
             <form class="" onSubmit={handleSubmit(onSubmit)}>
             <Box>
+                <h1 class="mb-20 text-2xl font-medium text-center">Créer votre partie</h1>
             <Box><TextField
                     // class="bg-gray-200 rounded-md"
                     required
