@@ -6,6 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
+import Box from '@mui/material/Box';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -46,7 +47,8 @@ function NewPartie() {
     }
 
     return (
-        <div className="">
+
+        <div class="">
             <ToastContainer
                 position="top-center"
                 autoClose={5000}
@@ -59,27 +61,35 @@ function NewPartie() {
                 pauseOnHover
                 theme="dark"
             />
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <TextField
+            <form class="" onSubmit={handleSubmit(onSubmit)}>
+            <Box>
+            <Box><TextField
+                    // class="bg-gray-200 rounded-md"
                     required
                     id="outlined-required"
                     label="Nom de la partie"
                     {...register("name", { required: true })}
-                />
-                <TextField
+                /></Box>
+                
+                <Box class="mb-0.5"><TextField
+                    // class="bg-gray-200 rounded-md"
                     required
                     id="outlined-required"
                     label="Votre pseudo"
                     {...register("pseudo", { required: true })}
-                />
+                /></Box>
+                </Box>
+
                 <FormGroup>
                     <FormControlLabel control={<Checkbox {...register("TEAM")} />} label="TEAM" />
                     <FormControlLabel control={<Checkbox {...register("PO")} />} label="PO" />
                     <FormControlLabel control={<Checkbox {...register("SM")} />} label="SM" />
                 </FormGroup>
                 <Button variant="contained" type="submit">Créer</Button>
+                
             </form>
         </div>
+
     );
 }
 

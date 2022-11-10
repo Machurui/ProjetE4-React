@@ -6,6 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
+import Box from '@mui/material/Box';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
@@ -58,18 +59,18 @@ function JoinPartie() {
                 theme="dark"
             />
             <form onSubmit={handleSubmit(onSubmit)}>
-                <TextField
+            <Box class="mb-0.5"><TextField
                     required
                     id="outlined-required"
-                    label="Nom de la partie"
-                    {...register("name", { required: true })}
-                />
-                <TextField
+                    label="Code de la partie"
+                    {...register("code", { required: true })}
+                /></Box>
+                <Box><TextField
                     required
                     id="outlined-required"
                     label="Votre pseudo"
                     {...register("pseudo", { required: true })}
-                />
+                /></Box>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox {...register("TEAM")} />} label="TEAM" />
                     <FormControlLabel control={<Checkbox {...register("PO")} />} label="PO" />
